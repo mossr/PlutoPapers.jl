@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.3
+# v0.20.4
 
 using Markdown
 using InteractiveUtils
@@ -40,12 +40,39 @@ begin
 		authors=[
 			Author(
 				name="Robert J. Moss",
-				affiliation="Stanford University, Stanford, cA",
+				affiliation="Stanford University, Stanford, CA",
 				email="mossr@cs.stanford.edu"),
 		],
 	)
 
-	applyclass(paper.documentclass)
+	Markdown.MD(
+		applyclass(paper.documentclass),
+		md"""
+		 $\newcommand{\E}{\mathbb{E}}$
+		 $\newcommand{\R}{\mathbb{R}}$
+		 $\newcommand{\minimize}{\operatorname{minimize}}$
+		 $\newcommand{\maximize}{\operatorname{maximize}}$
+		 $\newcommand{\supremum}{\operatorname{supremum}}$
+		 $\newcommand{\argmin}{\operatorname{argmin}}$
+		 $\newcommand{\argmax}{\operatorname{argmax}}$
+		 $\newcommand{\mat}[1]{\mathbf{#1}}$
+		 $\renewcommand{\vec}[1]{\mathbf{#1}}$
+		 $\def\textsc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$
+		 $\newcommand{\e}{\mathbf{e}}$
+		 $\newcommand{\w}{\mathbf{w}}$
+		 $\DeclareMathOperator{\Normal}{\mathcal{N}}$
+		 $\newcommand{\m}{\mathbf{m}}$
+		 $\newcommand{\M}{\mathbf{M}}$
+		 $\newcommand{\bfE}{\mathbf{E}}$
+		 $\newcommand{\surrogate}{\hat{S}} % Surrogate model (\mathcal{S})$
+		 $\DeclareMathOperator{\Geo}{Geo}$
+		 $\DeclarePairedDelimiter{\round}\lfloor\rceil$
+		 $\newcommand{\Sierra}{\mathbf{M}_\mathcal{S}}$
+		 $\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}$
+		""",
+		FootnotesRawNumbered(),
+		toc(depth=4),
+	)
 end
 
 # ╔═╡ 2ab1b89c-d1cd-4967-89f3-5767da8acb5d
@@ -877,41 +904,6 @@ html"""
 	<p><code>styled buttons</code></p>
 """
 
-# ╔═╡ 479725ec-4751-495d-888b-c6ce323035ac
-begin
-	latex_trigger # trigger
-	Markdown.MD(
-		md"""
-		 $\newcommand{\E}{\mathbb{E}}$
-		 $\newcommand{\R}{\mathbb{R}}$
-		 $\newcommand{\minimize}{\operatorname{minimize}}$
-		 $\newcommand{\maximize}{\operatorname{maximize}}$
-		 $\newcommand{\supremum}{\operatorname{supremum}}$
-		 $\newcommand{\argmin}{\operatorname{argmin}}$
-		 $\newcommand{\argmax}{\operatorname{argmax}}$
-		 $\newcommand{\mat}[1]{\mathbf{#1}}$
-		 $\renewcommand{\vec}[1]{\mathbf{#1}}$
-		 $\def\textsc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$
-		 $\newcommand{\e}{\mathbf{e}}$
-		 $\newcommand{\w}{\mathbf{w}}$
-		 $\DeclareMathOperator{\Normal}{\mathcal{N}}$
-		 $\newcommand{\m}{\mathbf{m}}$
-		 $\newcommand{\M}{\mathbf{M}}$
-		 $\newcommand{\bfE}{\mathbf{E}}$
-		 $\newcommand{\surrogate}{\hat{S}} % Surrogate model (\mathcal{S})$
-		 $\DeclareMathOperator{\Geo}{Geo}$
-		 $\DeclarePairedDelimiter{\round}\lfloor\rceil$
-		 $\newcommand{\Sierra}{\mathbf{M}_\mathcal{S}}$
-		 $\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}$
-		""",
-		FootnotesRawNumbered(),
-		toc(depth=4),
-		md"""
-		## $\LaTeX$ commands
-		"""
-	)
-end
-
 # ╔═╡ aa5c658b-421f-4cbd-b7bd-5da6582ccff7
 Markdown.MD(
 	md"$(@hide_all_cells)",
@@ -1007,6 +999,5 @@ Markdown.MD(
 # ╟─9c7460f8-b648-4ad4-99bc-ada7fa4afa84
 # ╟─f14faaa3-e685-4955-8292-26d4bbc2aaf3
 # ╟─60e7f3d0-248f-4fa0-bb02-1e1753fdee66
-# ╟─479725ec-4751-495d-888b-c6ce323035ac
 # ╟─aa5c658b-421f-4cbd-b7bd-5da6582ccff7
 # ╟─65bc0f87-c726-4026-8a7f-bbdb70e0349e

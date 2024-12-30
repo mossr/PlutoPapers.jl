@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.3
+# v0.20.4
 
 using Markdown
 using InteractiveUtils
@@ -50,7 +50,24 @@ begin
 			# Author(name="Robert Moss")
 		]
 	)
-	applyclass(presentation.documentclass)
+	Markdown.MD(
+		applyclass(presentation.documentclass),
+		md"""
+		 $\newcommand{\bbE}{\mathbb{E}}$
+		 $\DeclarePairedDelimiterXPP\bbE[1]{\mathbb{E}}{[}{]}{}{
+			\renewcommand\given{  \nonscript\:
+			  \delimsize\vert
+			  \nonscript\:
+			  \mathopen{}
+			  \allowbreak}
+			#1
+			}$
+		 $\DeclareMathOperator{\Var}{Var}$
+		 $\DeclareMathOperator{\SD}{SD}$
+		""",
+		FootnotesRawNumbered(),
+		toc(depth=4),
+	)
 end
 
 # ╔═╡ 29e38973-7494-4302-8385-c559e1e9b39b
@@ -455,31 +472,6 @@ end
 # \end{axis}
 # """; preamble)
 
-# ╔═╡ a5c0aa4c-9590-4cdc-903d-2b8e7b2682fa
-begin
-	# latex_trigger # trigger
-	Markdown.MD(
-		md"""
-		 $\newcommand{\bbE}{\mathbb{E}}$
-		 $\DeclarePairedDelimiterXPP\bbE[1]{\mathbb{E}}{[}{]}{}{
-			\renewcommand\given{  \nonscript\:
-			  \delimsize\vert
-			  \nonscript\:
-			  \mathopen{}
-			  \allowbreak}
-			#1
-			}$
-		 $\DeclareMathOperator{\Var}{Var}$
-		 $\DeclareMathOperator{\SD}{SD}$
-		""",
-		FootnotesRawNumbered(),
-		toc(depth=4),
-		md"""
-		## $\LaTeX$ commands
-		"""
-	)
-end
-
 # ╔═╡ fa82b60d-f29a-4255-b285-8d1437c940c1
 Markdown.MD(
 	md"$(@bind dark_mode PlutoPapers.DarkModeIndicator())",
@@ -649,6 +641,5 @@ label="fig:variance")
 # ╟─860d10a9-c85e-45f2-864a-50f0db0d78a6
 # ╟─d5e13c72-4993-437d-a6b4-e5f90fe3fa5d
 # ╟─e11f1c05-9322-4731-8fe7-d54af18db645
-# ╟─a5c0aa4c-9590-4cdc-903d-2b8e7b2682fa
 # ╟─fa82b60d-f29a-4255-b285-8d1437c940c1
 # ╟─fe39e72f-e51a-46b3-9988-b2f754c5cf69

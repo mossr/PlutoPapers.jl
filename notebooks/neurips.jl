@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.3
+# v0.20.4
 
 using Markdown
 using InteractiveUtils
@@ -54,7 +54,12 @@ begin
 		],
 	)
 
-	applyclass(paper.documentclass)
+	Markdown.MD(
+		applyclass(paper.documentclass),
+		md" $\def\textsc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$",
+		FootnotesRawNumbered(),
+		toc(depth=4),
+	)
 end
 
 # ╔═╡ 50cae4c4-7a13-4dfc-b247-47a33f830962
@@ -243,20 +248,8 @@ figure(plot(collect(1:1000) .+ σ2*randn(1000);
 # ╔═╡ f7fcf277-2013-4078-bf58-6ff3c2f24e2f
 plot_default(; dark_mode)
 
-# ╔═╡ 641def11-0a98-4a4c-a480-ceb217674598
-md"$\def\textsc#1{\dosc#1\csod} \def\dosc#1#2\csod{{\rm #1{\small #2}}}$"
-
-# ╔═╡ cc69a213-c563-4d62-bc51-c3326eb36bb2
-FootnotesRawNumbered()
-
-# ╔═╡ 05a29aad-893e-4ab2-99bd-2a3f750e808f
-toc()
-
 # ╔═╡ 265023f5-172e-452b-943a-5bfd342c8af1
 @hide_all_cells
-
-# ╔═╡ 5fcf3d0b-8f29-4a4e-80ac-3bd1ccc68858
-@show_all_cells
 
 # ╔═╡ Cell order:
 # ╟─b6b100f6-bcfc-44ea-9f9a-77ac9893b9d7
@@ -291,8 +284,4 @@ toc()
 # ╟─b4b5cbff-b290-48dc-98dc-8f4522962501
 # ╟─f1a56e54-c54f-4b72-8f8f-bf022e490ee6
 # ╟─f7fcf277-2013-4078-bf58-6ff3c2f24e2f
-# ╟─641def11-0a98-4a4c-a480-ceb217674598
-# ╟─cc69a213-c563-4d62-bc51-c3326eb36bb2
-# ╟─05a29aad-893e-4ab2-99bd-2a3f750e808f
 # ╟─265023f5-172e-452b-943a-5bfd342c8af1
-# ╟─5fcf3d0b-8f29-4a4e-80ac-3bd1ccc68858

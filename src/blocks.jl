@@ -28,34 +28,51 @@ end
 
 function table(tbl; label="", num=1, caption="Caption")
 	if !isempty(label)
-		p = "<p class='figure-caption' id='$label'>"
+		label = replace(label, ":"=>"-")
+		label = replace(label, "_"=>"-")
+		div = "<div id='$label'>"
+		addfigref!(label) # TODO: table refs
 	else
-		p = "<p class='figure-caption'>"
+		div = "<div>"
+	end
+	if caption isa Markdown.MD
+		caption = html(caption)
+		caption = replace(caption, "<p>"=>"")
+		caption = replace(caption, "</p>"=>"")
+		caption = HTML(caption)
 	end
 	@htl("""
-	<div>
+	$(HTML(div))
 	<p class='figure'>
-	$(HTML(p))Table $num: $caption
+		<span class='table-caption'></span>
+		Table $num: $caption
+	</p>
 	$tbl
-	</p>
-	</p>
 	</div>
 	""")
 end
 
 function code(cde; label="", num=1, caption="Caption", type="Code")
 	if !isempty(label)
+		label = replace(label, ":"=>"-")
+		label = replace(label, "_"=>"-")
 		div = "<div id='$label'>"
+		addfigref!(label) # TODO: table refs
 	else
 		div = "<div>"
 	end
+	if caption isa Markdown.MD
+		caption = html(caption)
+		caption = replace(caption, "<p>"=>"")
+		caption = replace(caption, "</p>"=>"")
+		caption = HTML(caption)
+	end
 	@htl("""
 	$(HTML(div))
+	$cde
 	<p class='figure'>
-		$cde
-		<p class='figure-caption'>
-			$type $num: $caption
-		</p>
+		<span class='table-caption'></span>
+		$type $num: $caption
 	</p>
 	</div>
 	""")
