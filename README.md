@@ -3,7 +3,7 @@
 Interactive and $\LaTeX$-styled papers in [Pluto.jl](https://github.com/fonsp/Pluto.jl).
 
 <p align="center">
-    <video width="448.5" height="492.5" controls src="./media/tufte.mov" autoplay></video>
+    <img src="./media/tufte.gif">
 </p>
 
 # Installation
@@ -33,7 +33,7 @@ Light Mode | Dark Mode
 Here's an example changing from the preset NeurIPS style to the Tufte style:
 
 <p align="center">
-    <video width="448.5" height="492.5" controls src="./media/neurips.mov" autoplay></video>
+    <img src="./media/neurips.gif">
 </p>
 
 ## Write mixed Markdown and $\LaTeX$
