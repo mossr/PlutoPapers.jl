@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.3
+# v0.20.4
 
 using Markdown
 using InteractiveUtils
@@ -72,6 +72,17 @@ book. We discuss the challenges associated with validation and conclude with an
 overview of the remaining chapters in the book.
 """
 
+# ╔═╡ 348fc07f-0bf0-4b13-808e-4d25edfbd99f
+@section "Model Building"
+
+# ╔═╡ a9c5ec8d-b414-4b49-a193-cb1d0806c3b2
+latex"""
+A system can be described by its environment model $T(s' \mid s, a)$, agent model $\pi(a \mid o)$, and observation model $O(o \mid s)$. Building these models requires the following three steps:
+1. _Select a model class._ A \textit{model class} is a set of mathematical models defined by a set of parameters.
+2. _Select the parameters for the model class._ This process involves selecting the parameters that best represent the system based on available data or expert knowledge.
+3. _Validate the model._ Once selected, the model should be validated to ensure that it accurately represents the system.
+"""
+
 # ╔═╡ 51e3a9fc-86b0-4c10-9355-5f7f33858065
 @section "Probability Distributions"
 
@@ -90,17 +101,6 @@ md" $\mu =$ $(@bind μ Slider(-4.5:0.1:4.5, show_value=true, default=0))"
 
 # ╔═╡ 943d5b0e-ef2c-4161-8739-6d2c58a07cdf
 md" $\sigma^2 =$ $(@bind σ² Slider(0.05:0.05:10, show_value=true, default=1))"
-
-# ╔═╡ 348fc07f-0bf0-4b13-808e-4d25edfbd99f
-@section "Model Building"
-
-# ╔═╡ a9c5ec8d-b414-4b49-a193-cb1d0806c3b2
-latex"""
-A system can be described by its environment model $T(s' \mid s, a)$, agent model $\pi(a \mid o)$, and observation model $O(o \mid s)$. Building these models requires the following three steps:
-1. _Select a model class._ A \textit{model class} is a set of mathematical models defined by a set of parameters.
-2. _Select the parameters for the model class._ This process involves selecting the parameters that best represent the system based on available data or expert knowledge.
-3. _Validate the model._ Once selected, the model should be validated to ensure that it accurately represents the system.
-"""
 
 # ╔═╡ eff34297-2faa-411d-8112-83c9df87b55f
 @section "Parameter Learning"
@@ -233,13 +233,13 @@ toc()
 # ╟─cafe892b-0281-4166-8a51-eb0ebfbad403
 # ╟─2a0ba439-b203-4b17-bcc0-d8e873b1f561
 # ╟─ea47f6ce-38ed-496b-ad25-d588389f42ca
+# ╟─348fc07f-0bf0-4b13-808e-4d25edfbd99f
+# ╟─a9c5ec8d-b414-4b49-a193-cb1d0806c3b2
 # ╟─51e3a9fc-86b0-4c10-9355-5f7f33858065
 # ╟─fc81ad8e-4804-4729-9677-7300c4abce4a
 # ╟─5cd69f76-a99a-4c9f-906f-0b0cbeca8403
 # ╟─b681fd29-c583-425b-aacf-eb21da8ae7a9
 # ╟─943d5b0e-ef2c-4161-8739-6d2c58a07cdf
-# ╟─348fc07f-0bf0-4b13-808e-4d25edfbd99f
-# ╟─a9c5ec8d-b414-4b49-a193-cb1d0806c3b2
 # ╟─eff34297-2faa-411d-8112-83c9df87b55f
 # ╟─161c15ca-0814-48ee-bbfc-e3a53bcf45b8
 # ╟─5281f7d5-6280-411f-b9a6-e30be74e22f1
