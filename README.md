@@ -1,6 +1,6 @@
 # PlutoPapers.jl
 
-Interactive and $\LaTeX$-styled papers in [Pluto.jl](https://github.com/fonsp/Pluto.jl).
+Interactive and LaTeX-styled papers in [Pluto.jl](https://github.com/fonsp/Pluto.jl).
 
 <p align="center">
     <img src="./media/tufte.gif">
@@ -18,7 +18,7 @@ See the following Pluto notebooks for examples.
 Example | HTML
 :------ | :--:
 NeurIPS style paper. | [![html](https://img.shields.io/badge/static%20html-NeurIPS-0072B2)](https://mossr.github.io/PlutoPapers.jl/html/neurips.html)
-Full conversion of $\LaTeX$ paper ([arXiv link](https://arxiv.org/pdf/2009.09043)) | [![html](https://img.shields.io/badge/static%20html-LaTeX-0072B2)](https://mossr.github.io/PlutoPapers.jl/html/cem.html)
+Full conversion of LaTeX paper ([arXiv link](https://arxiv.org/pdf/2009.09043)) | [![html](https://img.shields.io/badge/static%20html-LaTeX-0072B2)](https://mossr.github.io/PlutoPapers.jl/html/cem.html)
 Tufte-style lecture presentation | [![html](https://img.shields.io/badge/static%20html-Tufte-0072B2)](https://mossr.github.io/PlutoPapers.jl/html/tufte.html)
 Probability course notes | [![html](https://img.shields.io/badge/static%20html-CS109-0072B2)](https://mossr.github.io/PlutoPapers.jl/html/cs109.html)
 
@@ -36,9 +36,9 @@ Here's an example changing from the preset NeurIPS style to the Tufte style:
     <img src="./media/neurips.gif">
 </p>
 
-## Write mixed Markdown and $\LaTeX$
+## Write mixed Markdown and LaTeX
 
-Using the `latex` string macro, you can write both raw $\LaTeX$ code mixed with Markdown.
+Using the `latex` string macro, you can write both raw LaTeX code mixed with Markdown.
 
 <p align="center">
     <a href="./media/latex-macro.png"><img src="./media/latex-macro.png"></a>
